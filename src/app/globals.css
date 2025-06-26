@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.1 83.2% 9.8%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+ 
+    --ring: 222.1 83.2% 9.8%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.1 83.2% 9.8%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.9%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+ 
+    --ring: 210 40% 98%;
+  }
+}
+
+@layer viewport {
+  html {
+    @apply h-full select-none scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .radix-themes {
+    @apply light:text-slate-900 dark:text-slate-50;
+  }
+  .sr-only {
+    @apply absolute h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 m--1;
+    clip: rect(0, 0, 0, 0);
+  }
+  /* Animations
+  -------------------------------------------------- */
+  /* Slide in from bottom */
+  @keyframes slide-in-from-bottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  /* Slide out to bottom */
+  @keyframes slide-out-to-bottom {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+
+  /* Fade in */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* Fade out */
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .slide-in-from-bottom {
+    animation: slide-in-from-bottom 250ms ease forwards;
+  }
+  .slide-out-to-bottom {
+    animation: slide-out-to-bottom 250ms ease forwards;
+  }
+  .fade-in {
+    animation: fade-in 200ms ease-in-out forwards;
+  }
+  .fade-out {
+    animation: fade-out 200ms ease-in-out forwards;
+  }
+}
